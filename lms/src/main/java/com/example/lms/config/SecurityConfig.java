@@ -36,16 +36,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/users/**").permitAll()
-                .requestMatchers("/api/leaves/**").permitAll()
-                .requestMatchers("/api/settings/**").permitAll()
-                .requestMatchers("/api/admin/**").permitAll()
-                .requestMatchers("/api/announcements/**").permitAll()
-                .requestMatchers("/api/messages/**").permitAll()
-                .requestMatchers("/api/teams/**").permitAll()
-                .requestMatchers("/api/auth/login").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
             )
             .httpBasic(basic -> basic.disable());
 
