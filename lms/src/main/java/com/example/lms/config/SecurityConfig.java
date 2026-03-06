@@ -44,6 +44,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/announcements/**").permitAll()
                 .requestMatchers("/api/messages/**").permitAll()
                 .requestMatchers("/api/teams/**").permitAll()
+                .requestMatchers("/api/auth/login").permitAll()
                 .anyRequest().authenticated()
             )
             .httpBasic(basic -> basic.disable());
